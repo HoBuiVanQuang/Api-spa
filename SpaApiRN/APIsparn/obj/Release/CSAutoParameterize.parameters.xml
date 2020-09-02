@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="SPAEntities-Web.config Connection String" description="SPAEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.Model1.csdl|res://*/Models.Model1.ssdl|res://*/Models.Model1.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=17clc-httt-db-test.database.windows.net;initial catalog=SPA;user id=quangho;password=DBtest123;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\BTVN\\Nam3\\Ki3\\PTUD\\hdXamarin\\apiSpafi\\SpaApiRN\\APIsparn\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='SPAEntities']/@connectionString" />
+  </parameter>
+  <parameter name="SPAEntitiesrn-Web.config Connection String" description="SPAEntitiesrn Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.ModelSpa.csdl|res://*/Models.ModelSpa.ssdl|res://*/Models.ModelSpa.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=17clc-httt-db-test.database.windows.net;initial catalog=SPA;user id=quangho;password=DBtest123;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\BTVN\\Nam3\\Ki3\\PTUD\\hdXamarin\\apiSpafi\\SpaApiRN\\APIsparn\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='SPAEntitiesrn']/@connectionString" />
+  </parameter>
+</parameters>

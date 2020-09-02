@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SPAModelStoreContainer" CdmEntityContainer="SPAEntitiesrn">
+    <EntitySetMapping Name="CHINHANHs">
+      <EntityTypeMapping TypeName="SPAModel.CHINHANH">
+        <MappingFragment StoreEntitySet="CHINHANH">
+          <ScalarProperty Name="ID_CHINHANH" ColumnName="ID_CHINHANH" />
+          <ScalarProperty Name="ID_USER" ColumnName="ID_USER" />
+          <ScalarProperty Name="TEN" ColumnName="TEN" />
+          <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+          <ScalarProperty Name="TINHTRANG" ColumnName="TINHTRANG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CHITIET_GIUONG">
+      <EntityTypeMapping TypeName="SPAModel.CHITIET_GIUONG">
+        <MappingFragment StoreEntitySet="CHITIET_GIUONG">
+          <ScalarProperty Name="ID_GIUONG" ColumnName="ID_GIUONG" />
+          <ScalarProperty Name="ID_DICHVU" ColumnName="ID_DICHVU" />
+          <ScalarProperty Name="TNHTRANG" ColumnName="TNHTRANG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CHITIET_LICHHEN">
+      <EntityTypeMapping TypeName="SPAModel.CHITIET_LICHHEN">
+        <MappingFragment StoreEntitySet="CHITIET_LICHHEN">
+          <ScalarProperty Name="ID_LH" ColumnName="ID_LH" />
+          <ScalarProperty Name="ID_HLV" ColumnName="ID_HLV" />
+          <ScalarProperty Name="ID_DICHVU" ColumnName="ID_DICHVU" />
+          <ScalarProperty Name="ID_GIUONG" ColumnName="ID_GIUONG" />
+          <ScalarProperty Name="TRANGTHAI" ColumnName="TRANGTHAI" />
+          <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DATTRUOCs">
+      <EntityTypeMapping TypeName="SPAModel.DATTRUOC">
+        <MappingFragment StoreEntitySet="DATTRUOC">
+          <ScalarProperty Name="ID_DATTRUOC" ColumnName="ID_DATTRUOC" />
+          <ScalarProperty Name="ID_KH" ColumnName="ID_KH" />
+          <ScalarProperty Name="NGAYTAO" ColumnName="NGAYTAO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DICHVUs">
+      <EntityTypeMapping TypeName="SPAModel.DICHVU">
+        <MappingFragment StoreEntitySet="DICHVU">
+          <ScalarProperty Name="ID_DICHVU" ColumnName="ID_DICHVU" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="Mota" ColumnName="Mota" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+          <ScalarProperty Name="Thoigiancho" ColumnName="Thoigiancho" />
+          <ScalarProperty Name="ThoiLuong" ColumnName="ThoiLuong" />
+          <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GIOHANGs">
+      <EntityTypeMapping TypeName="SPAModel.GIOHANG">
+        <MappingFragment StoreEntitySet="GIOHANG">
+          <ScalarProperty Name="ID_GIOHANG" ColumnName="ID_GIOHANG" />
+          <ScalarProperty Name="ID_KH" ColumnName="ID_KH" />
+          <ScalarProperty Name="NGAYTAO" ColumnName="NGAYTAO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GIUONGs">
+      <EntityTypeMapping TypeName="SPAModel.GIUONG">
+        <MappingFragment StoreEntitySet="GIUONG">
+          <ScalarProperty Name="ID_GIUONG" ColumnName="ID_GIUONG" />
+          <ScalarProperty Name="ID_PHONG" ColumnName="ID_PHONG" />
+          <ScalarProperty Name="MOTA" ColumnName="MOTA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LICHHENs">
+      <EntityTypeMapping TypeName="SPAModel.LICHHEN">
+        <MappingFragment StoreEntitySet="LICHHEN">
+          <ScalarProperty Name="ID_LH" ColumnName="ID_LH" />
+          <ScalarProperty Name="ID_KH" ColumnName="ID_KH" />
+          <ScalarProperty Name="ID_CHINHANH" ColumnName="ID_CHINHANH" />
+          <ScalarProperty Name="GIOHEN" ColumnName="GIOHEN" />
+          <ScalarProperty Name="NGAYHEN" ColumnName="NGAYHEN" />
+          <ScalarProperty Name="TINHTRANG" ColumnName="TINHTRANG" />
+          <ScalarProperty Name="BINHLUAN" ColumnName="BINHLUAN" />
+          <ScalarProperty Name="DANHGIA" ColumnName="DANHGIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PHONGs">
+      <EntityTypeMapping TypeName="SPAModel.PHONG">
+        <MappingFragment StoreEntitySet="PHONG">
+          <ScalarProperty Name="ID_PHONG" ColumnName="ID_PHONG" />
+          <ScalarProperty Name="ID_CHINHANH" ColumnName="ID_CHINHANH" />
+          <ScalarProperty Name="LOAI" ColumnName="LOAI" />
+          <ScalarProperty Name="MOTA" ColumnName="MOTA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TTCANHANs">
+      <EntityTypeMapping TypeName="SPAModel.TTCANHAN">
+        <MappingFragment StoreEntitySet="TTCANHAN">
+          <ScalarProperty Name="ID_USER" ColumnName="ID_USER" />
+          <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+          <ScalarProperty Name="NGHENGHIEP" ColumnName="NGHENGHIEP" />
+          <ScalarProperty Name="NGAYSINH" ColumnName="NGAYSINH" />
+          <ScalarProperty Name="GIOITINH" ColumnName="GIOITINH" />
+          <ScalarProperty Name="THOIQUEN" ColumnName="THOIQUEN" />
+          <ScalarProperty Name="CHIEUCAO" ColumnName="CHIEUCAO" />
+          <ScalarProperty Name="TRONGLUONG" ColumnName="TRONGLUONG" />
+          <ScalarProperty Name="MO" ColumnName="MO" />
+          <ScalarProperty Name="MOBUNG" ColumnName="MOBUNG" />
+          <ScalarProperty Name="BMI" ColumnName="BMI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USERS">
+      <EntityTypeMapping TypeName="SPAModel.USER">
+        <MappingFragment StoreEntitySet="USERS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="PASSWORDS" ColumnName="PASSWORDS" />
+          <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+          <ScalarProperty Name="VaiTro" ColumnName="VaiTro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="CHITIET_DATTRUOC" TypeName="SPAModel.CHITIET_DATTRUOC" StoreEntitySet="CHITIET_DATTRUOC">
+      <EndProperty Name="DATTRUOC">
+        <ScalarProperty Name="ID_DATTRUOC" ColumnName="ID_DATTRUOC" />
+      </EndProperty>
+      <EndProperty Name="DICHVU">
+        <ScalarProperty Name="ID_DICHVU" ColumnName="ID_DICHVU" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CHITIET_GIOHANG" TypeName="SPAModel.CHITIET_GIOHANG" StoreEntitySet="CHITIET_GIOHANG">
+      <EndProperty Name="DICHVU">
+        <ScalarProperty Name="ID_DICHVU" ColumnName="ID_DICHVU" />
+      </EndProperty>
+      <EndProperty Name="GIOHANG">
+        <ScalarProperty Name="ID_GIOHANG" ColumnName="ID_GIOHANG" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

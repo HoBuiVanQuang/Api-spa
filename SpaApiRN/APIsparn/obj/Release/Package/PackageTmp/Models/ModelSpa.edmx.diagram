@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="63209472a72141929e97415faa981a72" Name="Diagram1">
+        <EntityTypeShape EntityType="SPAModel.CHINHANH" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPAModel.CHITIET_GIUONG" Width="1.5" PointX="9.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPAModel.CHITIET_LICHHEN" Width="1.5" PointX="9.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPAModel.DATTRUOC" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPAModel.DICHVU" Width="1.5" PointX="5.25" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPAModel.GIOHANG" Width="1.5" PointX="7.5" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPAModel.GIUONG" Width="1.5" PointX="7.5" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPAModel.LICHHEN" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPAModel.PHONG" Width="1.5" PointX="5.25" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPAModel.TTCANHAN" Width="1.5" PointX="3" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SPAModel.USER" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <AssociationConnector Association="SPAModel.FK__CHINHANH__ID_USE__778AC167" ManuallyRouted="false" />
+        <AssociationConnector Association="SPAModel.FK__LICHHEN__ID_CHIN__02FC7413" ManuallyRouted="false" />
+        <AssociationConnector Association="SPAModel.FK__PHONG__ID_CHINHA__787EE5A0" ManuallyRouted="false" />
+        <AssociationConnector Association="SPAModel.FK__CHITIET_G__ID_DI__7B5B524B" ManuallyRouted="false" />
+        <AssociationConnector Association="SPAModel.FK__CHITIET_G__ID_GI__7A672E12" ManuallyRouted="false" />
+        <AssociationConnector Association="SPAModel.FK__CHITIET_L__ID_DI__05D8E0BE" ManuallyRouted="false" />
+        <AssociationConnector Association="SPAModel.FK__CHITIET_L__ID_GI__06CD04F7" ManuallyRouted="false" />
+        <AssociationConnector Association="SPAModel.FK__CHITIET_L__ID_HL__04E4BC85" ManuallyRouted="false" />
+        <AssociationConnector Association="SPAModel.FK__CHITIET_L__ID_LH__03F0984C" ManuallyRouted="false" />
+        <AssociationConnector Association="SPAModel.FK__DATTRUOC__ID_KH__7C4F7684" ManuallyRouted="false" />
+        <AssociationConnector Association="SPAModel.FK__GIOHANG__ID_KH__7F2BE32F" ManuallyRouted="false" />
+        <AssociationConnector Association="SPAModel.FK__GIUONG__ID_PHONG__797309D9" ManuallyRouted="false" />
+        <AssociationConnector Association="SPAModel.FK__LICHHEN__ID_KH__02084FDA" ManuallyRouted="false" />
+        <AssociationConnector Association="SPAModel.FK__TTCANHAN__ID_USE__76969D2E" ManuallyRouted="false" />
+        <AssociationConnector Association="SPAModel.CHITIET_DATTRUOC" ManuallyRouted="false" />
+        <AssociationConnector Association="SPAModel.CHITIET_GIOHANG" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

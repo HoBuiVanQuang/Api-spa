@@ -1,0 +1,1016 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SPAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CHINHANH">
+          <Key>
+            <PropertyRef Name="ID_CHINHANH" />
+          </Key>
+          <Property Name="ID_CHINHANH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_USER" Type="int" />
+          <Property Name="TEN" Type="nvarchar" MaxLength="50" />
+          <Property Name="DIACHI" Type="nvarchar" MaxLength="50" />
+          <Property Name="TINHTRANG" Type="bit" />
+        </EntityType>
+        <EntityType Name="CHITIET_DATTRUOC">
+          <Key>
+            <PropertyRef Name="ID_DATTRUOC" />
+            <PropertyRef Name="ID_DICHVU" />
+          </Key>
+          <Property Name="ID_DATTRUOC" Type="int" Nullable="false" />
+          <Property Name="ID_DICHVU" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CHITIET_GIOHANG">
+          <Key>
+            <PropertyRef Name="ID_GIOHANG" />
+            <PropertyRef Name="ID_DICHVU" />
+          </Key>
+          <Property Name="ID_GIOHANG" Type="int" Nullable="false" />
+          <Property Name="ID_DICHVU" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CHITIET_GIUONG">
+          <Key>
+            <PropertyRef Name="ID_GIUONG" />
+            <PropertyRef Name="ID_DICHVU" />
+          </Key>
+          <Property Name="ID_GIUONG" Type="int" Nullable="false" />
+          <Property Name="ID_DICHVU" Type="int" Nullable="false" />
+          <Property Name="TNHTRANG" Type="int" />
+        </EntityType>
+        <EntityType Name="CHITIET_LICHHEN">
+          <Key>
+            <PropertyRef Name="ID_LH" />
+            <PropertyRef Name="ID_DICHVU" />
+          </Key>
+          <Property Name="ID_LH" Type="int" Nullable="false" />
+          <Property Name="ID_HLV" Type="int" />
+          <Property Name="ID_DICHVU" Type="int" Nullable="false" />
+          <Property Name="ID_GIUONG" Type="int" />
+          <Property Name="TRANGTHAI" Type="int" />
+          <Property Name="GHICHU" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DATTRUOC">
+          <Key>
+            <PropertyRef Name="ID_DATTRUOC" />
+          </Key>
+          <Property Name="ID_DATTRUOC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_KH" Type="int" />
+          <Property Name="NGAYTAO" Type="date" />
+        </EntityType>
+        <EntityType Name="DICHVU">
+          <Key>
+            <PropertyRef Name="ID_DICHVU" />
+          </Key>
+          <Property Name="ID_DICHVU" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ten" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mota" Type="nvarchar" MaxLength="100" />
+          <Property Name="Gia" Type="money" />
+          <Property Name="Thoigiancho" Type="int" />
+          <Property Name="ThoiLuong" Type="int" />
+          <Property Name="TinhTrang" Type="bit" />
+        </EntityType>
+        <EntityType Name="GIOHANG">
+          <Key>
+            <PropertyRef Name="ID_GIOHANG" />
+          </Key>
+          <Property Name="ID_GIOHANG" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_KH" Type="int" />
+          <Property Name="NGAYTAO" Type="date" />
+        </EntityType>
+        <EntityType Name="GIUONG">
+          <Key>
+            <PropertyRef Name="ID_GIUONG" />
+          </Key>
+          <Property Name="ID_GIUONG" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_PHONG" Type="int" />
+          <Property Name="MOTA" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="LICHHEN">
+          <Key>
+            <PropertyRef Name="ID_LH" />
+          </Key>
+          <Property Name="ID_LH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_KH" Type="int" Nullable="false" />
+          <Property Name="ID_CHINHANH" Type="int" Nullable="false" />
+          <Property Name="GIOHEN" Type="time" Precision="7" />
+          <Property Name="NGAYHEN" Type="date" />
+          <Property Name="TINHTRANG" Type="int" />
+          <Property Name="BINHLUAN" Type="nvarchar" MaxLength="200" />
+          <Property Name="DANHGIA" Type="int" />
+        </EntityType>
+        <EntityType Name="PHONG">
+          <Key>
+            <PropertyRef Name="ID_PHONG" />
+          </Key>
+          <Property Name="ID_PHONG" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_CHINHANH" Type="int" />
+          <Property Name="LOAI" Type="int" />
+          <Property Name="MOTA" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="TTCANHAN">
+          <Key>
+            <PropertyRef Name="ID_USER" />
+          </Key>
+          <Property Name="ID_USER" Type="int" Nullable="false" />
+          <Property Name="HOTEN" Type="nvarchar" MaxLength="50" />
+          <Property Name="NGHENGHIEP" Type="nvarchar" MaxLength="20" />
+          <Property Name="NGAYSINH" Type="date" />
+          <Property Name="GIOITINH" Type="bit" />
+          <Property Name="THOIQUEN" Type="nvarchar" MaxLength="100" />
+          <Property Name="CHIEUCAO" Type="float" />
+          <Property Name="TRONGLUONG" Type="float" />
+          <Property Name="MO" Type="float" />
+          <Property Name="MOBUNG" Type="float" />
+          <Property Name="BMI" Type="int" />
+        </EntityType>
+        <EntityType Name="USERS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USERNAME" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="PASSWORDS" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="TinhTrang" Type="bit" />
+          <Property Name="VaiTro" Type="int" />
+        </EntityType>
+        <Association Name="FK__CHINHANH__ID_USE__778AC167">
+          <End Role="USERS" Type="Self.USERS" Multiplicity="0..1" />
+          <End Role="CHINHANH" Type="Self.CHINHANH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USERS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CHINHANH">
+              <PropertyRef Name="ID_USER" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CHITIET_D__ID_DA__7D439ABD">
+          <End Role="DATTRUOC" Type="Self.DATTRUOC" Multiplicity="1" />
+          <End Role="CHITIET_DATTRUOC" Type="Self.CHITIET_DATTRUOC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DATTRUOC">
+              <PropertyRef Name="ID_DATTRUOC" />
+            </Principal>
+            <Dependent Role="CHITIET_DATTRUOC">
+              <PropertyRef Name="ID_DATTRUOC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CHITIET_D__ID_DI__7E37BEF6">
+          <End Role="DICHVU" Type="Self.DICHVU" Multiplicity="1" />
+          <End Role="CHITIET_DATTRUOC" Type="Self.CHITIET_DATTRUOC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DICHVU">
+              <PropertyRef Name="ID_DICHVU" />
+            </Principal>
+            <Dependent Role="CHITIET_DATTRUOC">
+              <PropertyRef Name="ID_DICHVU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CHITIET_G__ID_DI__01142BA1">
+          <End Role="DICHVU" Type="Self.DICHVU" Multiplicity="1" />
+          <End Role="CHITIET_GIOHANG" Type="Self.CHITIET_GIOHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DICHVU">
+              <PropertyRef Name="ID_DICHVU" />
+            </Principal>
+            <Dependent Role="CHITIET_GIOHANG">
+              <PropertyRef Name="ID_DICHVU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CHITIET_G__ID_DI__7B5B524B">
+          <End Role="DICHVU" Type="Self.DICHVU" Multiplicity="1" />
+          <End Role="CHITIET_GIUONG" Type="Self.CHITIET_GIUONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DICHVU">
+              <PropertyRef Name="ID_DICHVU" />
+            </Principal>
+            <Dependent Role="CHITIET_GIUONG">
+              <PropertyRef Name="ID_DICHVU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CHITIET_G__ID_GI__00200768">
+          <End Role="GIOHANG" Type="Self.GIOHANG" Multiplicity="1" />
+          <End Role="CHITIET_GIOHANG" Type="Self.CHITIET_GIOHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GIOHANG">
+              <PropertyRef Name="ID_GIOHANG" />
+            </Principal>
+            <Dependent Role="CHITIET_GIOHANG">
+              <PropertyRef Name="ID_GIOHANG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CHITIET_G__ID_GI__7A672E12">
+          <End Role="GIUONG" Type="Self.GIUONG" Multiplicity="1" />
+          <End Role="CHITIET_GIUONG" Type="Self.CHITIET_GIUONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GIUONG">
+              <PropertyRef Name="ID_GIUONG" />
+            </Principal>
+            <Dependent Role="CHITIET_GIUONG">
+              <PropertyRef Name="ID_GIUONG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CHITIET_L__ID_DI__05D8E0BE">
+          <End Role="DICHVU" Type="Self.DICHVU" Multiplicity="1" />
+          <End Role="CHITIET_LICHHEN" Type="Self.CHITIET_LICHHEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DICHVU">
+              <PropertyRef Name="ID_DICHVU" />
+            </Principal>
+            <Dependent Role="CHITIET_LICHHEN">
+              <PropertyRef Name="ID_DICHVU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CHITIET_L__ID_GI__06CD04F7">
+          <End Role="GIUONG" Type="Self.GIUONG" Multiplicity="0..1" />
+          <End Role="CHITIET_LICHHEN" Type="Self.CHITIET_LICHHEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GIUONG">
+              <PropertyRef Name="ID_GIUONG" />
+            </Principal>
+            <Dependent Role="CHITIET_LICHHEN">
+              <PropertyRef Name="ID_GIUONG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CHITIET_L__ID_HL__04E4BC85">
+          <End Role="USERS" Type="Self.USERS" Multiplicity="0..1" />
+          <End Role="CHITIET_LICHHEN" Type="Self.CHITIET_LICHHEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USERS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CHITIET_LICHHEN">
+              <PropertyRef Name="ID_HLV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CHITIET_L__ID_LH__03F0984C">
+          <End Role="LICHHEN" Type="Self.LICHHEN" Multiplicity="1" />
+          <End Role="CHITIET_LICHHEN" Type="Self.CHITIET_LICHHEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LICHHEN">
+              <PropertyRef Name="ID_LH" />
+            </Principal>
+            <Dependent Role="CHITIET_LICHHEN">
+              <PropertyRef Name="ID_LH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DATTRUOC__ID_KH__7C4F7684">
+          <End Role="USERS" Type="Self.USERS" Multiplicity="0..1" />
+          <End Role="DATTRUOC" Type="Self.DATTRUOC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USERS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DATTRUOC">
+              <PropertyRef Name="ID_KH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__GIOHANG__ID_KH__7F2BE32F">
+          <End Role="USERS" Type="Self.USERS" Multiplicity="0..1" />
+          <End Role="GIOHANG" Type="Self.GIOHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USERS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GIOHANG">
+              <PropertyRef Name="ID_KH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__GIUONG__ID_PHONG__797309D9">
+          <End Role="PHONG" Type="Self.PHONG" Multiplicity="0..1" />
+          <End Role="GIUONG" Type="Self.GIUONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHONG">
+              <PropertyRef Name="ID_PHONG" />
+            </Principal>
+            <Dependent Role="GIUONG">
+              <PropertyRef Name="ID_PHONG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__LICHHEN__ID_CHIN__02FC7413">
+          <End Role="CHINHANH" Type="Self.CHINHANH" Multiplicity="1" />
+          <End Role="LICHHEN" Type="Self.LICHHEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CHINHANH">
+              <PropertyRef Name="ID_CHINHANH" />
+            </Principal>
+            <Dependent Role="LICHHEN">
+              <PropertyRef Name="ID_CHINHANH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__LICHHEN__ID_KH__02084FDA">
+          <End Role="USERS" Type="Self.USERS" Multiplicity="1" />
+          <End Role="LICHHEN" Type="Self.LICHHEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USERS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="LICHHEN">
+              <PropertyRef Name="ID_KH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PHONG__ID_CHINHA__787EE5A0">
+          <End Role="CHINHANH" Type="Self.CHINHANH" Multiplicity="0..1" />
+          <End Role="PHONG" Type="Self.PHONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CHINHANH">
+              <PropertyRef Name="ID_CHINHANH" />
+            </Principal>
+            <Dependent Role="PHONG">
+              <PropertyRef Name="ID_CHINHANH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TTCANHAN__ID_USE__76969D2E">
+          <End Role="USERS" Type="Self.USERS" Multiplicity="1" />
+          <End Role="TTCANHAN" Type="Self.TTCANHAN" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="USERS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TTCANHAN">
+              <PropertyRef Name="ID_USER" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SPAModelStoreContainer">
+          <EntitySet Name="CHINHANH" EntityType="Self.CHINHANH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CHITIET_DATTRUOC" EntityType="Self.CHITIET_DATTRUOC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CHITIET_GIOHANG" EntityType="Self.CHITIET_GIOHANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CHITIET_GIUONG" EntityType="Self.CHITIET_GIUONG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CHITIET_LICHHEN" EntityType="Self.CHITIET_LICHHEN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DATTRUOC" EntityType="Self.DATTRUOC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DICHVU" EntityType="Self.DICHVU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GIOHANG" EntityType="Self.GIOHANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GIUONG" EntityType="Self.GIUONG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LICHHEN" EntityType="Self.LICHHEN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PHONG" EntityType="Self.PHONG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TTCANHAN" EntityType="Self.TTCANHAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USERS" EntityType="Self.USERS" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__CHINHANH__ID_USE__778AC167" Association="Self.FK__CHINHANH__ID_USE__778AC167">
+            <End Role="USERS" EntitySet="USERS" />
+            <End Role="CHINHANH" EntitySet="CHINHANH" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CHITIET_D__ID_DA__7D439ABD" Association="Self.FK__CHITIET_D__ID_DA__7D439ABD">
+            <End Role="DATTRUOC" EntitySet="DATTRUOC" />
+            <End Role="CHITIET_DATTRUOC" EntitySet="CHITIET_DATTRUOC" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CHITIET_D__ID_DI__7E37BEF6" Association="Self.FK__CHITIET_D__ID_DI__7E37BEF6">
+            <End Role="DICHVU" EntitySet="DICHVU" />
+            <End Role="CHITIET_DATTRUOC" EntitySet="CHITIET_DATTRUOC" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CHITIET_G__ID_DI__01142BA1" Association="Self.FK__CHITIET_G__ID_DI__01142BA1">
+            <End Role="DICHVU" EntitySet="DICHVU" />
+            <End Role="CHITIET_GIOHANG" EntitySet="CHITIET_GIOHANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CHITIET_G__ID_DI__7B5B524B" Association="Self.FK__CHITIET_G__ID_DI__7B5B524B">
+            <End Role="DICHVU" EntitySet="DICHVU" />
+            <End Role="CHITIET_GIUONG" EntitySet="CHITIET_GIUONG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CHITIET_G__ID_GI__00200768" Association="Self.FK__CHITIET_G__ID_GI__00200768">
+            <End Role="GIOHANG" EntitySet="GIOHANG" />
+            <End Role="CHITIET_GIOHANG" EntitySet="CHITIET_GIOHANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CHITIET_G__ID_GI__7A672E12" Association="Self.FK__CHITIET_G__ID_GI__7A672E12">
+            <End Role="GIUONG" EntitySet="GIUONG" />
+            <End Role="CHITIET_GIUONG" EntitySet="CHITIET_GIUONG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CHITIET_L__ID_DI__05D8E0BE" Association="Self.FK__CHITIET_L__ID_DI__05D8E0BE">
+            <End Role="DICHVU" EntitySet="DICHVU" />
+            <End Role="CHITIET_LICHHEN" EntitySet="CHITIET_LICHHEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CHITIET_L__ID_GI__06CD04F7" Association="Self.FK__CHITIET_L__ID_GI__06CD04F7">
+            <End Role="GIUONG" EntitySet="GIUONG" />
+            <End Role="CHITIET_LICHHEN" EntitySet="CHITIET_LICHHEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CHITIET_L__ID_HL__04E4BC85" Association="Self.FK__CHITIET_L__ID_HL__04E4BC85">
+            <End Role="USERS" EntitySet="USERS" />
+            <End Role="CHITIET_LICHHEN" EntitySet="CHITIET_LICHHEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CHITIET_L__ID_LH__03F0984C" Association="Self.FK__CHITIET_L__ID_LH__03F0984C">
+            <End Role="LICHHEN" EntitySet="LICHHEN" />
+            <End Role="CHITIET_LICHHEN" EntitySet="CHITIET_LICHHEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DATTRUOC__ID_KH__7C4F7684" Association="Self.FK__DATTRUOC__ID_KH__7C4F7684">
+            <End Role="USERS" EntitySet="USERS" />
+            <End Role="DATTRUOC" EntitySet="DATTRUOC" />
+          </AssociationSet>
+          <AssociationSet Name="FK__GIOHANG__ID_KH__7F2BE32F" Association="Self.FK__GIOHANG__ID_KH__7F2BE32F">
+            <End Role="USERS" EntitySet="USERS" />
+            <End Role="GIOHANG" EntitySet="GIOHANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__GIUONG__ID_PHONG__797309D9" Association="Self.FK__GIUONG__ID_PHONG__797309D9">
+            <End Role="PHONG" EntitySet="PHONG" />
+            <End Role="GIUONG" EntitySet="GIUONG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LICHHEN__ID_CHIN__02FC7413" Association="Self.FK__LICHHEN__ID_CHIN__02FC7413">
+            <End Role="CHINHANH" EntitySet="CHINHANH" />
+            <End Role="LICHHEN" EntitySet="LICHHEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LICHHEN__ID_KH__02084FDA" Association="Self.FK__LICHHEN__ID_KH__02084FDA">
+            <End Role="USERS" EntitySet="USERS" />
+            <End Role="LICHHEN" EntitySet="LICHHEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PHONG__ID_CHINHA__787EE5A0" Association="Self.FK__PHONG__ID_CHINHA__787EE5A0">
+            <End Role="CHINHANH" EntitySet="CHINHANH" />
+            <End Role="PHONG" EntitySet="PHONG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TTCANHAN__ID_USE__76969D2E" Association="Self.FK__TTCANHAN__ID_USE__76969D2E">
+            <End Role="USERS" EntitySet="USERS" />
+            <End Role="TTCANHAN" EntitySet="TTCANHAN" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SPAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CHINHANH">
+          <Key>
+            <PropertyRef Name="ID_CHINHANH" />
+          </Key>
+          <Property Name="ID_CHINHANH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_USER" Type="Int32" />
+          <Property Name="TEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DIACHI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TINHTRANG" Type="Boolean" />
+          <NavigationProperty Name="USER" Relationship="Self.FK__CHINHANH__ID_USE__778AC167" FromRole="CHINHANH" ToRole="USERS" />
+          <NavigationProperty Name="LICHHENs" Relationship="Self.FK__LICHHEN__ID_CHIN__02FC7413" FromRole="CHINHANH" ToRole="LICHHEN" />
+          <NavigationProperty Name="PHONGs" Relationship="Self.FK__PHONG__ID_CHINHA__787EE5A0" FromRole="CHINHANH" ToRole="PHONG" />
+        </EntityType>
+        <EntityType Name="CHITIET_GIUONG">
+          <Key>
+            <PropertyRef Name="ID_GIUONG" />
+            <PropertyRef Name="ID_DICHVU" />
+          </Key>
+          <Property Name="ID_GIUONG" Type="Int32" Nullable="false" />
+          <Property Name="ID_DICHVU" Type="Int32" Nullable="false" />
+          <Property Name="TNHTRANG" Type="Int32" />
+          <NavigationProperty Name="DICHVU" Relationship="Self.FK__CHITIET_G__ID_DI__7B5B524B" FromRole="CHITIET_GIUONG" ToRole="DICHVU" />
+          <NavigationProperty Name="GIUONG" Relationship="Self.FK__CHITIET_G__ID_GI__7A672E12" FromRole="CHITIET_GIUONG" ToRole="GIUONG" />
+        </EntityType>
+        <EntityType Name="CHITIET_LICHHEN">
+          <Key>
+            <PropertyRef Name="ID_LH" />
+            <PropertyRef Name="ID_DICHVU" />
+          </Key>
+          <Property Name="ID_LH" Type="Int32" Nullable="false" />
+          <Property Name="ID_HLV" Type="Int32" />
+          <Property Name="ID_DICHVU" Type="Int32" Nullable="false" />
+          <Property Name="ID_GIUONG" Type="Int32" />
+          <Property Name="TRANGTHAI" Type="Int32" />
+          <Property Name="GHICHU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DICHVU" Relationship="Self.FK__CHITIET_L__ID_DI__05D8E0BE" FromRole="CHITIET_LICHHEN" ToRole="DICHVU" />
+          <NavigationProperty Name="GIUONG" Relationship="Self.FK__CHITIET_L__ID_GI__06CD04F7" FromRole="CHITIET_LICHHEN" ToRole="GIUONG" />
+          <NavigationProperty Name="USER" Relationship="Self.FK__CHITIET_L__ID_HL__04E4BC85" FromRole="CHITIET_LICHHEN" ToRole="USERS" />
+          <NavigationProperty Name="LICHHEN" Relationship="Self.FK__CHITIET_L__ID_LH__03F0984C" FromRole="CHITIET_LICHHEN" ToRole="LICHHEN" />
+        </EntityType>
+        <EntityType Name="DATTRUOC">
+          <Key>
+            <PropertyRef Name="ID_DATTRUOC" />
+          </Key>
+          <Property Name="ID_DATTRUOC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_KH" Type="Int32" />
+          <Property Name="NGAYTAO" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="USER" Relationship="Self.FK__DATTRUOC__ID_KH__7C4F7684" FromRole="DATTRUOC" ToRole="USERS" />
+          <NavigationProperty Name="DICHVUs" Relationship="Self.CHITIET_DATTRUOC" FromRole="DATTRUOC" ToRole="DICHVU" />
+        </EntityType>
+        <EntityType Name="DICHVU">
+          <Key>
+            <PropertyRef Name="ID_DICHVU" />
+          </Key>
+          <Property Name="ID_DICHVU" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mota" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Gia" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Thoigiancho" Type="Int32" />
+          <Property Name="ThoiLuong" Type="Int32" />
+          <Property Name="TinhTrang" Type="Boolean" />
+          <NavigationProperty Name="CHITIET_GIUONG" Relationship="Self.FK__CHITIET_G__ID_DI__7B5B524B" FromRole="DICHVU" ToRole="CHITIET_GIUONG" />
+          <NavigationProperty Name="CHITIET_LICHHEN" Relationship="Self.FK__CHITIET_L__ID_DI__05D8E0BE" FromRole="DICHVU" ToRole="CHITIET_LICHHEN" />
+          <NavigationProperty Name="DATTRUOCs" Relationship="Self.CHITIET_DATTRUOC" FromRole="DICHVU" ToRole="DATTRUOC" />
+          <NavigationProperty Name="GIOHANGs" Relationship="Self.CHITIET_GIOHANG" FromRole="DICHVU" ToRole="GIOHANG" />
+        </EntityType>
+        <EntityType Name="GIOHANG">
+          <Key>
+            <PropertyRef Name="ID_GIOHANG" />
+          </Key>
+          <Property Name="ID_GIOHANG" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_KH" Type="Int32" />
+          <Property Name="NGAYTAO" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="USER" Relationship="Self.FK__GIOHANG__ID_KH__7F2BE32F" FromRole="GIOHANG" ToRole="USERS" />
+          <NavigationProperty Name="DICHVUs" Relationship="Self.CHITIET_GIOHANG" FromRole="GIOHANG" ToRole="DICHVU" />
+        </EntityType>
+        <EntityType Name="GIUONG">
+          <Key>
+            <PropertyRef Name="ID_GIUONG" />
+          </Key>
+          <Property Name="ID_GIUONG" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_PHONG" Type="Int32" />
+          <Property Name="MOTA" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CHITIET_GIUONG" Relationship="Self.FK__CHITIET_G__ID_GI__7A672E12" FromRole="GIUONG" ToRole="CHITIET_GIUONG" />
+          <NavigationProperty Name="CHITIET_LICHHEN" Relationship="Self.FK__CHITIET_L__ID_GI__06CD04F7" FromRole="GIUONG" ToRole="CHITIET_LICHHEN" />
+          <NavigationProperty Name="PHONG" Relationship="Self.FK__GIUONG__ID_PHONG__797309D9" FromRole="GIUONG" ToRole="PHONG" />
+        </EntityType>
+        <EntityType Name="LICHHEN">
+          <Key>
+            <PropertyRef Name="ID_LH" />
+          </Key>
+          <Property Name="ID_LH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_KH" Type="Int32" Nullable="false" />
+          <Property Name="ID_CHINHANH" Type="Int32" Nullable="false" />
+          <Property Name="GIOHEN" Type="Time" Precision="7" />
+          <Property Name="NGAYHEN" Type="DateTime" Precision="0" />
+          <Property Name="TINHTRANG" Type="Int32" />
+          <Property Name="BINHLUAN" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DANHGIA" Type="Int32" />
+          <NavigationProperty Name="CHINHANH" Relationship="Self.FK__LICHHEN__ID_CHIN__02FC7413" FromRole="LICHHEN" ToRole="CHINHANH" />
+          <NavigationProperty Name="CHITIET_LICHHEN" Relationship="Self.FK__CHITIET_L__ID_LH__03F0984C" FromRole="LICHHEN" ToRole="CHITIET_LICHHEN" />
+          <NavigationProperty Name="USER" Relationship="Self.FK__LICHHEN__ID_KH__02084FDA" FromRole="LICHHEN" ToRole="USERS" />
+        </EntityType>
+        <EntityType Name="PHONG">
+          <Key>
+            <PropertyRef Name="ID_PHONG" />
+          </Key>
+          <Property Name="ID_PHONG" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_CHINHANH" Type="Int32" />
+          <Property Name="LOAI" Type="Int32" />
+          <Property Name="MOTA" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CHINHANH" Relationship="Self.FK__PHONG__ID_CHINHA__787EE5A0" FromRole="PHONG" ToRole="CHINHANH" />
+          <NavigationProperty Name="GIUONGs" Relationship="Self.FK__GIUONG__ID_PHONG__797309D9" FromRole="PHONG" ToRole="GIUONG" />
+        </EntityType>
+        <EntityType Name="TTCANHAN">
+          <Key>
+            <PropertyRef Name="ID_USER" />
+          </Key>
+          <Property Name="ID_USER" Type="Int32" Nullable="false" />
+          <Property Name="HOTEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NGHENGHIEP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="NGAYSINH" Type="DateTime" Precision="0" />
+          <Property Name="GIOITINH" Type="Boolean" />
+          <Property Name="THOIQUEN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CHIEUCAO" Type="Double" />
+          <Property Name="TRONGLUONG" Type="Double" />
+          <Property Name="MO" Type="Double" />
+          <Property Name="MOBUNG" Type="Double" />
+          <Property Name="BMI" Type="Int32" />
+          <NavigationProperty Name="USER" Relationship="Self.FK__TTCANHAN__ID_USE__76969D2E" FromRole="TTCANHAN" ToRole="USERS" />
+        </EntityType>
+        <EntityType Name="USER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USERNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PASSWORDS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TinhTrang" Type="Boolean" />
+          <Property Name="VaiTro" Type="Int32" />
+          <NavigationProperty Name="CHINHANHs" Relationship="Self.FK__CHINHANH__ID_USE__778AC167" FromRole="USERS" ToRole="CHINHANH" />
+          <NavigationProperty Name="CHITIET_LICHHEN" Relationship="Self.FK__CHITIET_L__ID_HL__04E4BC85" FromRole="USERS" ToRole="CHITIET_LICHHEN" />
+          <NavigationProperty Name="DATTRUOCs" Relationship="Self.FK__DATTRUOC__ID_KH__7C4F7684" FromRole="USERS" ToRole="DATTRUOC" />
+          <NavigationProperty Name="GIOHANGs" Relationship="Self.FK__GIOHANG__ID_KH__7F2BE32F" FromRole="USERS" ToRole="GIOHANG" />
+          <NavigationProperty Name="LICHHENs" Relationship="Self.FK__LICHHEN__ID_KH__02084FDA" FromRole="USERS" ToRole="LICHHEN" />
+          <NavigationProperty Name="TTCANHAN" Relationship="Self.FK__TTCANHAN__ID_USE__76969D2E" FromRole="USERS" ToRole="TTCANHAN" />
+        </EntityType>
+        <Association Name="FK__CHINHANH__ID_USE__778AC167">
+          <End Role="USERS" Type="Self.USER" Multiplicity="0..1" />
+          <End Role="CHINHANH" Type="Self.CHINHANH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USERS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CHINHANH">
+              <PropertyRef Name="ID_USER" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__LICHHEN__ID_CHIN__02FC7413">
+          <End Role="CHINHANH" Type="Self.CHINHANH" Multiplicity="1" />
+          <End Role="LICHHEN" Type="Self.LICHHEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CHINHANH">
+              <PropertyRef Name="ID_CHINHANH" />
+            </Principal>
+            <Dependent Role="LICHHEN">
+              <PropertyRef Name="ID_CHINHANH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PHONG__ID_CHINHA__787EE5A0">
+          <End Role="CHINHANH" Type="Self.CHINHANH" Multiplicity="0..1" />
+          <End Role="PHONG" Type="Self.PHONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CHINHANH">
+              <PropertyRef Name="ID_CHINHANH" />
+            </Principal>
+            <Dependent Role="PHONG">
+              <PropertyRef Name="ID_CHINHANH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CHITIET_G__ID_DI__7B5B524B">
+          <End Role="DICHVU" Type="Self.DICHVU" Multiplicity="1" />
+          <End Role="CHITIET_GIUONG" Type="Self.CHITIET_GIUONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DICHVU">
+              <PropertyRef Name="ID_DICHVU" />
+            </Principal>
+            <Dependent Role="CHITIET_GIUONG">
+              <PropertyRef Name="ID_DICHVU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CHITIET_G__ID_GI__7A672E12">
+          <End Role="GIUONG" Type="Self.GIUONG" Multiplicity="1" />
+          <End Role="CHITIET_GIUONG" Type="Self.CHITIET_GIUONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GIUONG">
+              <PropertyRef Name="ID_GIUONG" />
+            </Principal>
+            <Dependent Role="CHITIET_GIUONG">
+              <PropertyRef Name="ID_GIUONG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CHITIET_L__ID_DI__05D8E0BE">
+          <End Role="DICHVU" Type="Self.DICHVU" Multiplicity="1" />
+          <End Role="CHITIET_LICHHEN" Type="Self.CHITIET_LICHHEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DICHVU">
+              <PropertyRef Name="ID_DICHVU" />
+            </Principal>
+            <Dependent Role="CHITIET_LICHHEN">
+              <PropertyRef Name="ID_DICHVU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CHITIET_L__ID_GI__06CD04F7">
+          <End Role="GIUONG" Type="Self.GIUONG" Multiplicity="0..1" />
+          <End Role="CHITIET_LICHHEN" Type="Self.CHITIET_LICHHEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GIUONG">
+              <PropertyRef Name="ID_GIUONG" />
+            </Principal>
+            <Dependent Role="CHITIET_LICHHEN">
+              <PropertyRef Name="ID_GIUONG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CHITIET_L__ID_HL__04E4BC85">
+          <End Role="USERS" Type="Self.USER" Multiplicity="0..1" />
+          <End Role="CHITIET_LICHHEN" Type="Self.CHITIET_LICHHEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USERS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CHITIET_LICHHEN">
+              <PropertyRef Name="ID_HLV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CHITIET_L__ID_LH__03F0984C">
+          <End Role="LICHHEN" Type="Self.LICHHEN" Multiplicity="1" />
+          <End Role="CHITIET_LICHHEN" Type="Self.CHITIET_LICHHEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LICHHEN">
+              <PropertyRef Name="ID_LH" />
+            </Principal>
+            <Dependent Role="CHITIET_LICHHEN">
+              <PropertyRef Name="ID_LH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DATTRUOC__ID_KH__7C4F7684">
+          <End Role="USERS" Type="Self.USER" Multiplicity="0..1" />
+          <End Role="DATTRUOC" Type="Self.DATTRUOC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USERS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DATTRUOC">
+              <PropertyRef Name="ID_KH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__GIOHANG__ID_KH__7F2BE32F">
+          <End Role="USERS" Type="Self.USER" Multiplicity="0..1" />
+          <End Role="GIOHANG" Type="Self.GIOHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USERS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="GIOHANG">
+              <PropertyRef Name="ID_KH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__GIUONG__ID_PHONG__797309D9">
+          <End Role="PHONG" Type="Self.PHONG" Multiplicity="0..1" />
+          <End Role="GIUONG" Type="Self.GIUONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHONG">
+              <PropertyRef Name="ID_PHONG" />
+            </Principal>
+            <Dependent Role="GIUONG">
+              <PropertyRef Name="ID_PHONG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__LICHHEN__ID_KH__02084FDA">
+          <End Role="USERS" Type="Self.USER" Multiplicity="1" />
+          <End Role="LICHHEN" Type="Self.LICHHEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USERS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="LICHHEN">
+              <PropertyRef Name="ID_KH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TTCANHAN__ID_USE__76969D2E">
+          <End Role="USERS" Type="Self.USER" Multiplicity="1" />
+          <End Role="TTCANHAN" Type="Self.TTCANHAN" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="USERS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TTCANHAN">
+              <PropertyRef Name="ID_USER" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CHITIET_DATTRUOC">
+          <End Role="DATTRUOC" Type="Self.DATTRUOC" Multiplicity="*" />
+          <End Role="DICHVU" Type="Self.DICHVU" Multiplicity="*" />
+        </Association>
+        <Association Name="CHITIET_GIOHANG">
+          <End Role="DICHVU" Type="Self.DICHVU" Multiplicity="*" />
+          <End Role="GIOHANG" Type="Self.GIOHANG" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="SPAEntitiesrn" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CHINHANHs" EntityType="Self.CHINHANH" />
+          <EntitySet Name="CHITIET_GIUONG" EntityType="Self.CHITIET_GIUONG" />
+          <EntitySet Name="CHITIET_LICHHEN" EntityType="Self.CHITIET_LICHHEN" />
+          <EntitySet Name="DATTRUOCs" EntityType="Self.DATTRUOC" />
+          <EntitySet Name="DICHVUs" EntityType="Self.DICHVU" />
+          <EntitySet Name="GIOHANGs" EntityType="Self.GIOHANG" />
+          <EntitySet Name="GIUONGs" EntityType="Self.GIUONG" />
+          <EntitySet Name="LICHHENs" EntityType="Self.LICHHEN" />
+          <EntitySet Name="PHONGs" EntityType="Self.PHONG" />
+          <EntitySet Name="TTCANHANs" EntityType="Self.TTCANHAN" />
+          <EntitySet Name="USERS" EntityType="Self.USER" />
+          <AssociationSet Name="FK__CHINHANH__ID_USE__778AC167" Association="Self.FK__CHINHANH__ID_USE__778AC167">
+            <End Role="USERS" EntitySet="USERS" />
+            <End Role="CHINHANH" EntitySet="CHINHANHs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LICHHEN__ID_CHIN__02FC7413" Association="Self.FK__LICHHEN__ID_CHIN__02FC7413">
+            <End Role="CHINHANH" EntitySet="CHINHANHs" />
+            <End Role="LICHHEN" EntitySet="LICHHENs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PHONG__ID_CHINHA__787EE5A0" Association="Self.FK__PHONG__ID_CHINHA__787EE5A0">
+            <End Role="CHINHANH" EntitySet="CHINHANHs" />
+            <End Role="PHONG" EntitySet="PHONGs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CHITIET_G__ID_DI__7B5B524B" Association="Self.FK__CHITIET_G__ID_DI__7B5B524B">
+            <End Role="DICHVU" EntitySet="DICHVUs" />
+            <End Role="CHITIET_GIUONG" EntitySet="CHITIET_GIUONG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CHITIET_G__ID_GI__7A672E12" Association="Self.FK__CHITIET_G__ID_GI__7A672E12">
+            <End Role="GIUONG" EntitySet="GIUONGs" />
+            <End Role="CHITIET_GIUONG" EntitySet="CHITIET_GIUONG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CHITIET_L__ID_DI__05D8E0BE" Association="Self.FK__CHITIET_L__ID_DI__05D8E0BE">
+            <End Role="DICHVU" EntitySet="DICHVUs" />
+            <End Role="CHITIET_LICHHEN" EntitySet="CHITIET_LICHHEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CHITIET_L__ID_GI__06CD04F7" Association="Self.FK__CHITIET_L__ID_GI__06CD04F7">
+            <End Role="GIUONG" EntitySet="GIUONGs" />
+            <End Role="CHITIET_LICHHEN" EntitySet="CHITIET_LICHHEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CHITIET_L__ID_HL__04E4BC85" Association="Self.FK__CHITIET_L__ID_HL__04E4BC85">
+            <End Role="USERS" EntitySet="USERS" />
+            <End Role="CHITIET_LICHHEN" EntitySet="CHITIET_LICHHEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CHITIET_L__ID_LH__03F0984C" Association="Self.FK__CHITIET_L__ID_LH__03F0984C">
+            <End Role="LICHHEN" EntitySet="LICHHENs" />
+            <End Role="CHITIET_LICHHEN" EntitySet="CHITIET_LICHHEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DATTRUOC__ID_KH__7C4F7684" Association="Self.FK__DATTRUOC__ID_KH__7C4F7684">
+            <End Role="USERS" EntitySet="USERS" />
+            <End Role="DATTRUOC" EntitySet="DATTRUOCs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__GIOHANG__ID_KH__7F2BE32F" Association="Self.FK__GIOHANG__ID_KH__7F2BE32F">
+            <End Role="USERS" EntitySet="USERS" />
+            <End Role="GIOHANG" EntitySet="GIOHANGs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__GIUONG__ID_PHONG__797309D9" Association="Self.FK__GIUONG__ID_PHONG__797309D9">
+            <End Role="PHONG" EntitySet="PHONGs" />
+            <End Role="GIUONG" EntitySet="GIUONGs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LICHHEN__ID_KH__02084FDA" Association="Self.FK__LICHHEN__ID_KH__02084FDA">
+            <End Role="USERS" EntitySet="USERS" />
+            <End Role="LICHHEN" EntitySet="LICHHENs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TTCANHAN__ID_USE__76969D2E" Association="Self.FK__TTCANHAN__ID_USE__76969D2E">
+            <End Role="USERS" EntitySet="USERS" />
+            <End Role="TTCANHAN" EntitySet="TTCANHANs" />
+          </AssociationSet>
+          <AssociationSet Name="CHITIET_DATTRUOC" Association="Self.CHITIET_DATTRUOC">
+            <End Role="DATTRUOC" EntitySet="DATTRUOCs" />
+            <End Role="DICHVU" EntitySet="DICHVUs" />
+          </AssociationSet>
+          <AssociationSet Name="CHITIET_GIOHANG" Association="Self.CHITIET_GIOHANG">
+            <End Role="DICHVU" EntitySet="DICHVUs" />
+            <End Role="GIOHANG" EntitySet="GIOHANGs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SPAModelStoreContainer" CdmEntityContainer="SPAEntitiesrn">
+          <EntitySetMapping Name="CHINHANHs">
+            <EntityTypeMapping TypeName="SPAModel.CHINHANH">
+              <MappingFragment StoreEntitySet="CHINHANH">
+                <ScalarProperty Name="ID_CHINHANH" ColumnName="ID_CHINHANH" />
+                <ScalarProperty Name="ID_USER" ColumnName="ID_USER" />
+                <ScalarProperty Name="TEN" ColumnName="TEN" />
+                <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+                <ScalarProperty Name="TINHTRANG" ColumnName="TINHTRANG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CHITIET_GIUONG">
+            <EntityTypeMapping TypeName="SPAModel.CHITIET_GIUONG">
+              <MappingFragment StoreEntitySet="CHITIET_GIUONG">
+                <ScalarProperty Name="ID_GIUONG" ColumnName="ID_GIUONG" />
+                <ScalarProperty Name="ID_DICHVU" ColumnName="ID_DICHVU" />
+                <ScalarProperty Name="TNHTRANG" ColumnName="TNHTRANG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CHITIET_LICHHEN">
+            <EntityTypeMapping TypeName="SPAModel.CHITIET_LICHHEN">
+              <MappingFragment StoreEntitySet="CHITIET_LICHHEN">
+                <ScalarProperty Name="ID_LH" ColumnName="ID_LH" />
+                <ScalarProperty Name="ID_HLV" ColumnName="ID_HLV" />
+                <ScalarProperty Name="ID_DICHVU" ColumnName="ID_DICHVU" />
+                <ScalarProperty Name="ID_GIUONG" ColumnName="ID_GIUONG" />
+                <ScalarProperty Name="TRANGTHAI" ColumnName="TRANGTHAI" />
+                <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DATTRUOCs">
+            <EntityTypeMapping TypeName="SPAModel.DATTRUOC">
+              <MappingFragment StoreEntitySet="DATTRUOC">
+                <ScalarProperty Name="ID_DATTRUOC" ColumnName="ID_DATTRUOC" />
+                <ScalarProperty Name="ID_KH" ColumnName="ID_KH" />
+                <ScalarProperty Name="NGAYTAO" ColumnName="NGAYTAO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DICHVUs">
+            <EntityTypeMapping TypeName="SPAModel.DICHVU">
+              <MappingFragment StoreEntitySet="DICHVU">
+                <ScalarProperty Name="ID_DICHVU" ColumnName="ID_DICHVU" />
+                <ScalarProperty Name="Ten" ColumnName="Ten" />
+                <ScalarProperty Name="Mota" ColumnName="Mota" />
+                <ScalarProperty Name="Gia" ColumnName="Gia" />
+                <ScalarProperty Name="Thoigiancho" ColumnName="Thoigiancho" />
+                <ScalarProperty Name="ThoiLuong" ColumnName="ThoiLuong" />
+                <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GIOHANGs">
+            <EntityTypeMapping TypeName="SPAModel.GIOHANG">
+              <MappingFragment StoreEntitySet="GIOHANG">
+                <ScalarProperty Name="ID_GIOHANG" ColumnName="ID_GIOHANG" />
+                <ScalarProperty Name="ID_KH" ColumnName="ID_KH" />
+                <ScalarProperty Name="NGAYTAO" ColumnName="NGAYTAO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GIUONGs">
+            <EntityTypeMapping TypeName="SPAModel.GIUONG">
+              <MappingFragment StoreEntitySet="GIUONG">
+                <ScalarProperty Name="ID_GIUONG" ColumnName="ID_GIUONG" />
+                <ScalarProperty Name="ID_PHONG" ColumnName="ID_PHONG" />
+                <ScalarProperty Name="MOTA" ColumnName="MOTA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LICHHENs">
+            <EntityTypeMapping TypeName="SPAModel.LICHHEN">
+              <MappingFragment StoreEntitySet="LICHHEN">
+                <ScalarProperty Name="ID_LH" ColumnName="ID_LH" />
+                <ScalarProperty Name="ID_KH" ColumnName="ID_KH" />
+                <ScalarProperty Name="ID_CHINHANH" ColumnName="ID_CHINHANH" />
+                <ScalarProperty Name="GIOHEN" ColumnName="GIOHEN" />
+                <ScalarProperty Name="NGAYHEN" ColumnName="NGAYHEN" />
+                <ScalarProperty Name="TINHTRANG" ColumnName="TINHTRANG" />
+                <ScalarProperty Name="BINHLUAN" ColumnName="BINHLUAN" />
+                <ScalarProperty Name="DANHGIA" ColumnName="DANHGIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PHONGs">
+            <EntityTypeMapping TypeName="SPAModel.PHONG">
+              <MappingFragment StoreEntitySet="PHONG">
+                <ScalarProperty Name="ID_PHONG" ColumnName="ID_PHONG" />
+                <ScalarProperty Name="ID_CHINHANH" ColumnName="ID_CHINHANH" />
+                <ScalarProperty Name="LOAI" ColumnName="LOAI" />
+                <ScalarProperty Name="MOTA" ColumnName="MOTA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TTCANHANs">
+            <EntityTypeMapping TypeName="SPAModel.TTCANHAN">
+              <MappingFragment StoreEntitySet="TTCANHAN">
+                <ScalarProperty Name="ID_USER" ColumnName="ID_USER" />
+                <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+                <ScalarProperty Name="NGHENGHIEP" ColumnName="NGHENGHIEP" />
+                <ScalarProperty Name="NGAYSINH" ColumnName="NGAYSINH" />
+                <ScalarProperty Name="GIOITINH" ColumnName="GIOITINH" />
+                <ScalarProperty Name="THOIQUEN" ColumnName="THOIQUEN" />
+                <ScalarProperty Name="CHIEUCAO" ColumnName="CHIEUCAO" />
+                <ScalarProperty Name="TRONGLUONG" ColumnName="TRONGLUONG" />
+                <ScalarProperty Name="MO" ColumnName="MO" />
+                <ScalarProperty Name="MOBUNG" ColumnName="MOBUNG" />
+                <ScalarProperty Name="BMI" ColumnName="BMI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USERS">
+            <EntityTypeMapping TypeName="SPAModel.USER">
+              <MappingFragment StoreEntitySet="USERS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="PASSWORDS" ColumnName="PASSWORDS" />
+                <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+                <ScalarProperty Name="VaiTro" ColumnName="VaiTro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="CHITIET_DATTRUOC" TypeName="SPAModel.CHITIET_DATTRUOC" StoreEntitySet="CHITIET_DATTRUOC">
+            <EndProperty Name="DATTRUOC">
+              <ScalarProperty Name="ID_DATTRUOC" ColumnName="ID_DATTRUOC" />
+            </EndProperty>
+            <EndProperty Name="DICHVU">
+              <ScalarProperty Name="ID_DICHVU" ColumnName="ID_DICHVU" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="CHITIET_GIOHANG" TypeName="SPAModel.CHITIET_GIOHANG" StoreEntitySet="CHITIET_GIOHANG">
+            <EndProperty Name="DICHVU">
+              <ScalarProperty Name="ID_DICHVU" ColumnName="ID_DICHVU" />
+            </EndProperty>
+            <EndProperty Name="GIOHANG">
+              <ScalarProperty Name="ID_GIOHANG" ColumnName="ID_GIOHANG" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
